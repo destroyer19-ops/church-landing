@@ -68,6 +68,13 @@ try {
 
     app_redirect('live.html');
 } catch (Throwable $exception) {
+    error_log('stream_register.php failed: ' . $exception->getMessage());
     http_response_code(500);
+
+    if ($exception instanceof RuntimeException && str_contains($exception->getMessage(), 'Database configuration is incomplete')) {
+        echo 'Registration is unavailable because the database is not configured yet. Create a .env file or set DB_HOST, DB_PORT, DB_NAME, DB_USER, and DB_PASSWORD.';
+        exit();
+    }
+
     echo 'We could not complete your registration right now. Please try again later.';
 }
