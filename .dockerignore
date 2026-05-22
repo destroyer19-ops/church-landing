@@ -1,0 +1,4 @@
+cms/
+.env
+.git
+.DS_Store

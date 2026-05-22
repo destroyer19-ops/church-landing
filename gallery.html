@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Christ Embassy Love Church Barking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lightbox2 CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Custom styles for the gallery */
+        .gallery-item {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        
+        /* Lightbox caption styling */
+        .lb-data .lb-caption {
+            font-size: 1rem;
+            color: #ccc;
+        }
+    </style>
+</head>
+<body style="background-color: var(--light-gray);">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold" style="color: var(--primary-blue);">Christ Embassy Barking</a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex md:space-x-8 items-center">
+                <a href="index.html" class="text-gray-600 font-medium hover:text-orange-500 transition duration-300">Home</a>
+                <a href="about.html" class="text-gray-600 font-medium hover:text-orange-500 transition duration-300">About</a>
+                <a href="foundation-school.html" class="text-gray-600 font-medium hover:text-orange-500 transition duration-300">Foundation School</a>
+                <a href="events.html" class="text-gray-600 font-medium hover:text-orange-500 transition duration-300">Events</a>
+                <a href="gallery.html" class="text-orange-500 font-bold transition duration-300">Gallery</a>
+                <a href="contact.html" class="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition duration-300" style="background-color: var(--accent-orange);">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-dark-gray focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Panel (Initially hidden) -->
+    <div id="mobile-menu-panel" class="fixed top-0 left-0 w-64 h-full bg-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out shadow-lg">
+        <div class="p-4">
+            <button id="mobile-menu-close" class="absolute top-4 right-4 text-gray-600">&times;</button>
+            <nav class="mt-10 flex flex-col space-y-4">
+                 <a href="index.html" class="text-gray-800 hover:text-orange-500">Home</a>
+                <a href="about.html" class="text-gray-800 hover:text-orange-500">About</a>
+                <a href="foundation-school.html" class="text-gray-800 hover:text-orange-500">Foundation School</a>
+                <a href="events.html" class="text-gray-800 hover:text-orange-500">Events</a>
+                <a href="gallery.html" class="text-orange-500 font-bold">Gallery</a>
+                <a href="contact.html" class="text-gray-800 hover:text-orange-500">Contact</a>
+            </nav>
+        </div>
+    </div>
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+    <main>
+        <!-- Page Header -->
+        <section class="bg-cover bg-center" style="background-image: url('images/1B7A1007.jpg');">
+            <div class="py-24" style="background-color: rgba(13, 59, 102, 0.8);">
+                <div class="container mx-auto px-6 text-center">
+                    <h1 class="text-4xl md:text-5xl font-bold text-white">Moments from Our Programs</h1>
+                    <p class="text-xl text-gray-300 mt-2">Explore the life, joy, and impact of Christ Embassy Barking.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Grid -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <!-- Image 1 -->
+                    <a href="images/1B7A1007.jpg" data-lightbox="church-gallery" data-title="A moment from our programs." class="block bg-white rounded-lg overflow-hidden gallery-item sleek-shadow">
+                        <img src="images/1B7A1007.jpg" alt="Church Event" class="w-full h-full object-cover">
+                    </a>
+                    <!-- Image 2 -->
+                    <a href="images/1B7A1007.jpg" data-lightbox="church-gallery" data-title="A moment from our programs." class="block bg-white rounded-lg overflow-hidden gallery-item sleek-shadow">
+                        <img src="images/1B7A1007.jpg" alt="Church Event" class="w-full h-full object-cover">
+                    </a>
+                    <!-- Image 3 -->
+                    <a href="images/1B7A1007.jpg" data-lightbox="church-gallery" data-title="A moment from our programs." class="block bg-white rounded-lg overflow-hidden gallery-item sleek-shadow">
+                        <img src="images/1B7A1007.jpg" alt="Church Event" class="w-full h-full object-cover">
+                    </a>
+                    <!-- Image 4 -->
+                    <a href="images/1B7A1007.jpg" data-lightbox="church-gallery" data-title="A moment from our programs." class="block bg-white rounded-lg overflow-hidden gallery-item sleek-shadow">
+                        <img src="images/1B7A1007.jpg" alt="Church Event" class="w-full h-full object-cover">
+                    </a>
+                    <!-- Image 5 -->
+                    <a href="images/1B7A1007.jpg" data-lightbox="church-gallery" data-title="A moment from our programs." class="block bg-white rounded-lg overflow-hidden gallery-item sleek-shadow">
+                        <img src="images/1B7A1007.jpg" alt="Church Event" class="w-full h-full object-cover">
+                    </a>
+                    <!-- Image 6 -->
+                    <a href="images/1B7A1007.jpg" data-lightbox="church-gallery" data-title="A moment from our programs." class="block bg-white rounded-lg overflow-hidden gallery-item sleek-shadow">
+                        <img src="images/1B7A1007.jpg" alt="Church Event" class="w-full h-full object-cover">
+                    </a>
+                     <!-- Image 7 -->
+                    <a href="images/1B7A1007.jpg" data-lightbox="church-gallery" data-title="A moment from our programs." class="block bg-white rounded-lg overflow-hidden gallery-item sleek-shadow">
+                        <img src="images/1B7A1007.jpg" alt="Church Event" class="w-full h-full object-cover">
+                    </a>
+                    <!-- Image 8 -->
+                    <a href="images/1B7A1007.jpg" data-lightbox="church-gallery" data-title="A moment from our programs." class="block bg-white rounded-lg overflow-hidden gallery-item sleek-shadow">
+                        <img src="images/1B7A1007.jpg" alt="Church Event" class="w-full h-full object-cover">
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark-gray text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <p>&copy; 2025 Christ Embassy Barking. All Rights Reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- jQuery (required for Lightbox2) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Lightbox2 JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <!-- Your custom main.js -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Mobile menu toggle
+            const menuButton = document.getElementById('mobile-menu-button');
+            const menuPanel = document.getElementById('mobile-menu-panel');
+            const menuClose = document.getElementById('mobile-menu-close');
+            const menuOverlay = document.getElementById('mobile-menu-overlay');
+
+            const openMenu = () => {
+                menuPanel.classList.remove('-translate-x-full');
+                menuOverlay.classList.remove('hidden');
+            };
+
+            const closeMenu = () => {
+                menuPanel.classList.add('-translate-x-full');
+                menuOverlay.classList.add('hidden');
+            };
+
+            if (menuButton) menuButton.addEventListener('click', openMenu);
+            if (menuClose) menuClose.addEventListener('click', closeMenu);
+            if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+        });
+        
+        // Lightbox2 options
+        lightbox.option({
+          'resizeDuration': 200,
+          'wrapAround': true
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+/* Import a modern, clean font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Define the new color palette as CSS variables for easy reuse */
+:root {
+  --primary-blue: #0d3b66;      /* A deep, professional blue */
+  --accent-orange: #f9a826;     /* A vibrant, friendly orange */
+  --neutral-white: #FFFFFF;
+  --light-gray: #f4f4f9;        /* A very light gray for backgrounds */
+  --dark-gray: #000000;         /* For text and footer background */
+}
+
+/* Apply the base font to the entire site */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark-gray);
+    background-color: var(--light-gray);
+}
+
+/* Custom class for a subtle box-shadow to be used on cards/sections */
+.sleek-shadow {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}

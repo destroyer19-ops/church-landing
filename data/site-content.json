@@ -1,0 +1,10 @@
+{
+  "home": {
+    "hero_title": "Welcome to Christ Embassy Barking",
+    "hero_subtitle": "Giving Your Life a Meaning",
+    "hero_background_image": "images/1B7A1007.jpg"
+  },
+  "live_stream": {
+    "embed_url": "https://www.youtube.com/embed/your-live-stream-id"
+  }
+}

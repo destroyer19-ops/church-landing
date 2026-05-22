@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Sunday Celebration Service",
+    "description": "Join us every Sunday for a powerful time of worship, prayer, and the teaching of God's Word.",
+    "date": "2026-05-24",
+    "time": "10:00 AM",
+    "location": "Christ Embassy Barking, London",
+    "image_url": "images/1B7A1007.jpg",
+    "learn_more_link": "contact.html"
+  },
+  {
+    "title": "Midweek Service",
+    "description": "A refreshing time of fellowship and practical Bible teaching to strengthen your week.",
+    "date": "2026-05-27",
+    "time": "7:00 PM",
+    "location": "Christ Embassy Barking, London",
+    "image_url": "images/1B7A10072.jpg",
+    "learn_more_link": "contact.html"
+  },
+  {
+    "title": "Foundation School Intake",
+    "description": "Register for the next Foundation School intake and grow in your understanding of the Christian faith.",
+    "date": "2026-06-07",
+    "time": "After Sunday Service",
+    "location": "Church Auditorium",
+    "image_url": "images/1B7A1007.jpg",
+    "learn_more_link": "foundation-school.html"
+  }
+]

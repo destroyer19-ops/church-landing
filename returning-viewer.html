@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Back - Christ Embassy Love Church Barking</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color: var(--light-gray);">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold" style="color: var(--primary-blue);">CE Barking</a>
+            <!-- Note: The nav link still points to watch.php, which is correct -->
+            <a href="watch.php" class="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition duration-300" style="background-color: var(--accent-orange);">Watch Service</a>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-20">
+        <div class="max-w-xl mx-auto bg-white p-8 md:p-12 rounded-lg sleek-shadow text-center">
+            <h1 class="text-3xl font-bold mb-2" style="color: var(--primary-blue);">Welcome Back!</h1>
+            <p class="text-gray-600 mb-8">We're glad to see you again. Please let us know how many people are joining the service with you today.</p>
+            <form id="returning-viewer-form" action="log_viewing_session.php" method="POST" class="space-y-6">
+                
+                <!-- This hidden field will be populated by JavaScript with the viewer's ID from the cookie -->
+                <input type="hidden" id="viewer_id" name="viewer_id" value="">
+
+                <div>
+                    <label for="number_of_viewers" class="block text-gray-700 text-lg font-bold mb-2">Number of People Watching (including yourself)</label>
+                    <input type="number" id="number_of_viewers" name="number_of_viewers" value="1" min="1" class="shadow appearance-none border rounded w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" style="border-color: var(--primary-blue);">
+                </div>
+                
+                <button type="submit" class="w-full text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-opacity-90 transition duration-300" style="background-color: var(--accent-orange);">Join Service</button>
+            </form>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12 mt-20">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-500">&copy; 2025 Christ Embassy Barking. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Function to get a cookie by name
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+
+        // When the document is loaded, get the viewer_id from the cookie and set it in the hidden form field.
+        document.addEventListener('DOMContentLoaded', function () {
+            const viewerId = getCookie('viewer_id');
+            if (viewerId) {
+                document.getElementById('viewer_id').value = viewerId;
+            } else {
+                // If for some reason the cookie is missing, redirect to the main registration page.
+                window.location.href = 'stream-register.html';
+            }
+        });
+    </script>
+</body>
+</html>

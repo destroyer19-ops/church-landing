@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christ Embassy Love Church Barking | Modern & Professional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Parallax effect for the hero section */
+        #hero-section {
+            background-attachment: fixed;
+        }
+
+        /* Simple fade-in animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body style="background-color: var(--light-gray);">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold" style="color: var(--primary-blue);">CE Barking</a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex md:space-x-8 items-center">
+                <a href="index.html"
+                    class="text-gray-600 font-medium hover:text-orange-500 transition duration-300">Home</a>
+                <a href="about.html"
+                    class="text-gray-600 font-medium hover:text-orange-500 transition duration-300">About</a>
+                <a href="foundation-school.html"
+                    class="text-gray-600 font-medium hover:text-orange-500 transition duration-300">Foundation
+                    School</a>
+                <a href="events.html" class="text-gray-600 font-medium hover:text-orange-500 transition duration-300">Events</a>
+                <a href="watch.php"
+                    class="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition duration-300"
+                    style="background-color: var(--accent-orange);">Watch Service</a>
+                <a href="contact.html"
+                    class="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition duration-300"
+                    style="background-color: var(--accent-orange);">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-dark-gray focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Panel (Initially hidden) -->
+    <div id="mobile-menu-panel"
+        class="fixed top-0 left-0 w-64 h-full bg-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out shadow-lg">
+        <div class="p-4">
+            <button id="mobile-menu-close" class="absolute top-4 right-4 text-gray-600">&times;</button>
+            <nav class="mt-10 flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-800 hover:text-orange-500">Home</a>
+                <a href="about.html" class="text-gray-800 hover:text-orange-500">About</a>
+                <a href="foundation-school.html" class="text-gray-800 hover:text-orange-500">Foundation School</a>
+                <a href="events.html" class="text-gray-800 hover:text-orange-500">Events</a>
+                <a href="watch.php" class="text-gray-800 hover:text-orange-500">Watch Service</a>
+                <a href="contact.html" class="text-gray-800 hover:text-orange-500">Contact</a>
+            </nav>
+        </div>
+    </div>
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero-section" class="bg-cover bg-center h-screen"
+            style="background-image: url('images/1B7A1007.jpg');">
+            <div class="flex items-center justify-center h-full" style="background-color: rgba(0, 0, 0, 0.6);">
+                <div class="text-center text-white p-4">
+                    <h1 id="hero-title" class="text-5xl md:text-7xl font-bold mb-4">Welcome to Christ Embassy Barking
+                    </h1>
+                    <p id="hero-subtitle" class="text-xl md:text-2xl mb-8">Giving Your Life a Meaning</p>
+                    <div class="flex flex-col md:flex-row space-y-4 md:space-x-4 justify-center">
+                        <a href="watch.php"
+                            class="text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300"
+                            style="background-color: var(--accent-orange);">Watch Live Service</a>
+                        <a href="foundation-school.html"
+                            class="bg-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-gray-200 transition duration-300"
+                            style="color: var(--primary-blue);">Join Foundation School</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dynamic Sections -->
+        <div class="container mx-auto px-6 py-20">
+
+            <!-- Who We Are -->
+            <section class="fade-in-section mb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold" style="color: var(--primary-blue);">Who We Are</h2>
+                    <p class="text-lg text-gray-600 mt-2 max-w-3xl mx-auto">Christ Embassy Barking is a place where
+                        lives are transformed through the teaching of God’s Word, the power of the Holy Spirit, and
+                        heartfelt worship. We are committed to raising spiritually grounded believers equipped to live
+                        victorious and purposeful lives in Christ.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-8 bg-white rounded-lg sleek-shadow">
+                        <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">Teaching the Word</h3>
+                        <p class="text-gray-600">We are passionate about teaching the Word with clarity and power.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-lg sleek-shadow">
+                        <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">Building Character</h3>
+                        <p class="text-gray-600">We are passionate about building strong Christian character.</p>
+                    </div>
+                    <div class="p-8 bg-white rounded-lg sleek-shadow">
+                        <h3 class="text-2xl font-bold mb-4" style="color: var(--primary-blue);">Raising Leaders</h3>
+                        <p class="text-gray-600">We are passionate about raising leaders and ministers.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Foundation School -->
+            <section class="fade-in-section mb-20">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <img src="images/1B7A1007.jpg" alt="Foundation School" class="rounded-lg sleek-shadow w-full">
+                    </div>
+                    <div>
+                        <h2 class="text-4xl font-bold mb-4" style="color: var(--primary-blue);">What Is Foundation
+                            School?</h2>
+                        <p class="text-lg text-gray-600 mb-6">A structured spiritual training program designed to teach
+                            the foundational doctrines of Christ, helping believers grow in spiritual maturity and
+                            become effective witnesses.</p>
+                        <ul class="list-disc list-inside text-gray-600 space-y-2 mb-8">
+                            <li>The New Creation</li>
+                            <li>The Holy Spirit</li>
+                            <li>Christian Doctrine & Evangelism</li>
+                            <li>The Local Church & Ministry</li>
+                        </ul>
+                        <a href="foundation-school.html"
+                            class="text-white py-3 px-8 rounded-full text-lg font-semibold transition duration-300 inline-block"
+                            style="background-color: var(--accent-orange);">Register for Foundation School</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- News & Events -->
+            <section class="fade-in-section">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold" style="color: var(--primary-blue);">Latest News & Events</h2>
+                </div>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-lg sleek-shadow overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2" style="color: var(--primary-blue);">Sunday Celebration
+                            </h3>
+                            <p class="text-gray-600 mb-4">Join us every Sunday for a powerful time of worship and the
+                                Word.</p>
+                            <a href="events.html" class="font-semibold" style="color: var(--accent-orange);">Learn More
+                                &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg sleek-shadow overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2" style="color: var(--primary-blue);">Midweek Service</h3>
+                            <p class="text-gray-600 mb-4">A refreshing time of fellowship and teaching every Wednesday.
+                            </p>
+                            <a href="events.html" class="font-semibold" style="color: var(--accent-orange);">Learn More
+                                &rarr;</a>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-lg sleek-shadow overflow-hidden">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2" style="color: var(--primary-blue);">Foundation School
+                            </h3>
+                            <p class="text-gray-600 mb-4">New classes are starting soon. Register today to begin your
+                                journey.</p>
+                            <a href="foundation-school.html" class="font-semibold"
+                                style="color: var(--accent-orange);">Learn More &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Gallery Highlights -->
+        <section class="fade-in-section py-20 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold mb-12" style="color: var(--primary-blue);">Moments from Our Programs</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+                    <div class="bg-white rounded-lg overflow-hidden gallery-item sleek-shadow">
+                        <img src="images/1B7A1007.jpg" alt="Church Event" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden gallery-item sleek-shadow">
+                        <img src="images/1B7A1007.jpg" alt="Church Event" class="w-full h-auto object-cover">
+                    </div>
+                    <div class="bg-white rounded-lg overflow-hidden gallery-item sleek-shadow">
+                        <img src="images/1B7A1007.jpg" alt="Church Event" class="w-full h-auto object-cover">
+                    </div>
+                </div>
+                <a href="gallery.html" class="py-3 px-8 rounded-full text-lg font-semibold transition duration-300"
+                    style="background-color: var(--accent-orange); color: var(--neutral-white);">View Full Gallery</a>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="fade-in-section" style="background-color: var(--primary-blue);">
+            <div class="container mx-auto px-6 py-20 text-center text-white">
+                <h2 class="text-4xl font-bold">Be Part of What God Is Doing</h2>
+                <p class="text-lg mt-2 mb-8 max-w-3xl mx-auto">Whether you’re joining us onsite or online, there’s a
+                    place for you at Christ Embassy Barking.</p>
+                <a href="contact.html" class="py-3 px-8 rounded-full text-lg font-semibold transition duration-300"
+                    style="background-color: var(--accent-orange); color: var(--neutral-white);">Contact Us</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Column 1: Church Name/About -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Christ Embassy Barking</h3>
+                    <p class="text-gray-400">Giving Your Life a Meaning.</p>
+                </div>
+
+                <!-- Column 2: Quick Links (Placeholder for now) -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-accent-orange transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="hover:text-accent-orange transition duration-300">About Us</a>
+                        </li>
+                        <li><a href="foundation-school.html"
+                                class="hover:text-accent-orange transition duration-300">Foundation School</a></li>
+                        <li><a href="events.html" class="hover:text-accent-orange transition duration-300">Events</a>
+                        </li>
+                        <li><a href="watch.php" class="hover:text-accent-orange transition duration-300">Watch Service</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact & Service Times -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Contact & Services</h3>
+                    <address class="space-y-2 text-gray-400 not-italic">
+                        <p>123 Church Street, Barking,<br>London, UK</p>
+                        <p><a href="mailto:contact@christembassybarking.org"
+                                class="hover:text-accent-orange transition duration-300">contact@christembassybarking.org</a>
+                        </p>
+                        <p>+44 (0) 20 1234 5678</p>
+                    </address>
+                    <p class="text-gray-400 mt-4">
+                        Sunday Service: 10:00 AM<br>
+                        Midweek Service: 7:00 PM (Wed)
+                    </p>
+                </div>
+
+                <!-- Column 4: Social Media -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-accent-orange transition duration-300"
+                            aria-label="Facebook">
+                            <!-- Placeholder SVG for Facebook -->
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M14 13.5h2.4l.6-3h-3v-2c0-1.03.6-2 2-2h1V4.5c-.3-.04-.6-.07-.9-.07-1.07 0-1.92.52-2.3 1.25-.56-1.57-1.8-2.68-3.3-2.68-2.45 0-3.7 1.83-3.7 4.15v2.3H6v3h3.5v9h4.5v-9z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-accent-orange transition duration-300"
+                            aria-label="Twitter">
+                            <!-- Placeholder SVG for Twitter -->
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M22.46 6c-.7.3-1.4.5-2.2.6.8-.5 1.4-1.2 1.7-2-.8.5-1.7.9-2.7 1.1-.7-.7-1.7-1.2-2.8-1.2-2.1 0-3.8 1.7-3.8 3.8 0 .3 0 .6.1.8-3.2-.2-6-1.7-7.9-4.1-.3.5-.5 1-.5 1.7 0 1.3.7 2.4 1.7 3.1-.6 0-1.2-.2-1.7-.5v.1c0 1.8 1.3 3.3 3 3.7-.3.1-.7.1-1 .1-.2 0-.4 0-.6-.1.5 1.5 1.8 2.5 3.4 2.5-1.3 1-2.9 1.7-4.7 1.7-.3 0-.6 0-.9-.1 1.7 1.1 3.7 1.8 5.8 1.8 7 0 10.8-5.8 10.8-10.8v-.5c.7-.5 1.2-1.1 1.6-1.8z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-accent-orange transition duration-300"
+                            aria-label="Instagram">
+                            <!-- Placeholder SVG for Instagram -->
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07c3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.252-1.691 4.771-4.919 4.919-.296.058-.677.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.252 1.691-4.771 4.919-4.919.296-.058.677-.07 4.85-.07zm0-2.163c-3.376 0-3.77.013-5.04.072-4.468.204-6.079 1.83-6.283 6.283-.06 1.27-.072 1.664-.072 5.04s.013 3.77.072 5.04c.204 4.468 1.83 6.079 6.283 6.283 1.27.06 1.664.072 5.04.072s3.77-.013 5.04-.072c4.468-.204 6.079-1.83 6.283-6.283.06-1.27.072-1.664.072-5.04s-.013-3.77-.072-5.04c-.204-4.468-1.83-6.079-6.283-6.283-1.27-.06-1.664-.072-5.04-.072zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.5-11.838a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-500">&copy; 2025 Christ Embassy Barking. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const menuPanel = document.getElementById('mobile-menu-panel');
+            const menuClose = document.getElementById('mobile-menu-close');
+            const menuOverlay = document.getElementById('mobile-menu-overlay');
+
+            const openMenu = () => {
+                menuPanel.classList.remove('-translate-x-full');
+                menuOverlay.classList.remove('hidden');
+            };
+
+            const closeMenu = () => {
+                menuPanel.classList.add('-translate-x-full');
+                menuOverlay.classList.add('hidden');
+            };
+
+            if (menuButton) menuButton.addEventListener('click', openMenu);
+            if (menuClose) menuClose.addEventListener('click', closeMenu);
+            if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+
+
+            const apiUri = 'api/home-content.php';
+            fetch(apiUri)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    if (data) {
+                        const heroTitle = document.getElementById('hero-title');
+                        const heroSubtitle = document.getElementById('hero-subtitle');
+                        const heroSection = document.getElementById('hero-section');
+
+                        if (heroTitle && data.hero_title) heroTitle.textContent = data.hero_title;
+                        if (heroSubtitle && data.hero_subtitle) heroSubtitle.textContent = data.hero_subtitle;
+                        if (heroSection && data.hero_background_image) {
+                            heroSection.style.backgroundImage = `url('${data.hero_background_image}')`;
+                        }
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching page data:', error);
+                });
+
+            // Scroll animations
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+
+</html>

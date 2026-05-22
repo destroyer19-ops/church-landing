@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Christ Embassy Barking | Watch Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Parallax effect for the hero section */
+        #hero-section {
+            background-attachment: fixed;
+        }
+
+        /* Simple fade-in animation */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Styles for the popup */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            width: 90%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .popup-content h2 {
+            margin-bottom: 20px;
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+        }
+
+        .popup-content label {
+            display: block;
+            text-align: left;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .popup-content input[type="text"],
+        .popup-content input[type="email"],
+        .popup-content input[type="tel"],
+        .popup-content select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .popup-content button {
+            background-color: var(--accent-orange);
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .popup-content button:hover {
+            background-color: #e65c00;
+            /* Darker shade of accent-orange */
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #live-stream-content.hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="live-page" style="background-color: var(--light-gray);">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold" style="color: var(--primary-blue);">CE Barking</a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex md:space-x-8 items-center">
+                <a href="index.html"
+                    class="text-gray-600 font-medium hover:text-orange-500 transition duration-300">Home</a>
+                <a href="about.html"
+                    class="text-gray-600 font-medium hover:text-orange-500 transition duration-300">About</a>
+                <a href="foundation-school.html"
+                    class="text-gray-600 font-medium hover:text-orange-500 transition duration-300">Foundation
+                    School</a>
+                <a href="events.html"
+                    class="text-gray-600 font-medium hover:text-orange-500 transition duration-300">Events</a>
+                <a href="watch.php"
+                    class="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition duration-300"
+                    style="background-color: var(--accent-orange);">Watch Service</a>
+                <a href="contact.html"
+                    class="text-white py-2 px-6 rounded-full font-semibold hover:bg-opacity-90 transition duration-300"
+                    style="background-color: var(--accent-orange);">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-dark-gray focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Mobile Menu Panel (Initially hidden) -->
+    <div id="mobile-menu-panel"
+        class="fixed top-0 left-0 w-64 h-full bg-white z-50 transform -translate-x-full transition-transform duration-300 ease-in-out shadow-lg">
+        <div class="p-4">
+            <button id="mobile-menu-close" class="absolute top-4 right-4 text-gray-600">&times;</button>
+            <nav class="mt-10 flex flex-col space-y-4">
+                <a href="index.html" class="text-gray-800 hover:text-orange-500">Home</a>
+                <a href="about.html" class="text-gray-800 hover:text-orange-500">About</a>
+                <a href="foundation-school.html" class="text-gray-800 hover:text-orange-500">Foundation School</a>
+                <a href="events.html" class="text-gray-800 hover:text-orange-500">Events</a>
+                <a href="watch.php" class="text-gray-800 hover:text-orange-500">Watch Service</a>
+                <a href="contact.html" class="text-gray-800 hover:text-orange-500">Contact</a>
+            </nav>
+        </div>
+    </div>
+    <div id="mobile-menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+    <!-- Hero Section for Live Stream -->
+    <section class="bg-cover bg-center h-96 flex items-center justify-center"
+        style="background-image: url('images/1B7A1007.jpg'); background-attachment: fixed;">
+        <div class="text-center text-white p-4" style="background-color: rgba(0, 0, 0, 0.6);">
+            <h1 class="text-5xl md:text-6xl font-bold mb-2">Watch Service</h1>
+            <p class="text-xl md:text-2xl">Join us for an inspiring time of worship and the Word.</p>
+        </div>
+    </section>
+    <main class="container mx-auto px-6 py-10">
+
+
+        <!-- Live Stream Content Area -->
+        <section id="live-stream-content" class="bg-white rounded-lg shadow-lg p-5 mb-10">
+            <div class="aspect-video w-full">
+                <!-- Placeholder for live stream embed (e.g., YouTube, Vimeo iframe) -->
+                <!-- Replace this with your actual live stream embed code -->
+                <iframe class="w-full h-full" src="https://www.youtube.com/embed/your-live-stream-id" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+                <div class="mt-4 text-center">
+                    <p class="text-gray-700">Live service is currently active. If you encounter issues, please refresh
+                        the page.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- User Information Popup Removed -->
+
+
+    <!-- Footer -->
+    <footer class="bg-black text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <!-- Column 1: Church Name/About -->
+                <div>
+                    <h3 class="text-2xl font-bold text-white mb-4">Christ Embassy Barking</h3>
+                    <p class="text-gray-400">Giving Your Life a Meaning.</p>
+                </div>
+
+                <!-- Column 2: Quick Links (Placeholder for now) -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="index.html" class="hover:text-accent-orange transition duration-300">Home</a></li>
+                        <li><a href="about.html" class="hover:text-accent-orange transition duration-300">About Us</a>
+                        </li>
+                        <li><a href="foundation-school.html"
+                                class="hover:text-accent-orange transition duration-300">Foundation School</a></li>
+                        <li><a href="events.html" class="hover:text-accent-orange transition duration-300">Events</a>
+                        </li>
+                        <li><a href="watch.php" class="hover:text-accent-orange transition duration-300">Watch Service</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Contact & Service Times -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Contact & Services</h3>
+                    <address class="space-y-2 text-gray-400 not-italic">
+                        <p>123 Church Street, Barking,<br>London, UK</p>
+                        <p><a href="mailto:contact@christembassybarking.org"
+                                class="hover:text-accent-orange transition duration-300">contact@christembassybarking.org</a>
+                        </p>
+                        <p>+44 (0) 20 1234 5678</p>
+                    </address>
+                    <p class="text-gray-400 mt-4">
+                        Sunday Service: 10:00 AM<br>
+                        Midweek Service: 7:00 PM (Wed)
+                    </p>
+                </div>
+
+                <!-- Column 4: Social Media -->
+                <div>
+                    <h3 class="text-xl font-bold text-white mb-4">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-accent-orange transition duration-300"
+                            aria-label="Facebook">
+                            <!-- Placeholder SVG for Facebook -->
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M14 13.5h2.4l.6-3h-3v-2c0-1.03.6-2 2-2h1V4.5c-.3-.04-.6-.07-.9-.07-1.07 0-1.92.52-2.3 1.25-.56-1.57-1.8-2.68-3.3-2.68-2.45 0-3.7 1.83-3.7 4.15v2.3H6v3h3.5v9h4.5v-9z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-accent-orange transition duration-300"
+                            aria-label="Twitter">
+                            <!-- Placeholder SVG for Twitter -->
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M22.46 6c-.7.3-1.4.5-2.2.6.8-.5 1.4-1.2 1.7-2-.8.5-1.7.9-2.7 1.1-.7-.7-1.7-1.2-2.8-1.2-2.1 0-3.8 1.7-3.8 3.8 0 .3 0 .6.1.8-3.2-.2-6-1.7-7.9-4.1-.3.5-.5 1-.5 1.7 0 1.3.7 2.4 1.7 3.1-.6 0-1.2-.2-1.7-.5v.1c0 1.8 1.3 3.3 3 3.7-.3.1-.7.1-1 .1-.2 0-.4 0-.6-.1.5 1.5 1.8 2.5 3.4 2.5-1.3 1-2.9 1.7-4.7 1.7-.3 0-.6 0-.9-.1 1.7 1.1 3.7 1.8 5.8 1.8 7 0 10.8-5.8 10.8-10.8v-.5c.7-.5 1.2-1.1 1.6-1.8z" />
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-accent-orange transition duration-300"
+                            aria-label="Instagram">
+                            <!-- Placeholder SVG for Instagram -->
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.163c3.204 0 3.584.012 4.85.07c3.252.148 4.771 1.691 4.919 4.919.058 1.265.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.148 3.252-1.691 4.771-4.919 4.919-.296.058-.677.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.07-1.646-.07-4.85s.012-3.584.07-4.85c.148-3.252 1.691-4.771 4.919-4.919.296-.058.677-.07 4.85-.07zm0-2.163c-3.376 0-3.77.013-5.04.072-4.468.204-6.079 1.83-6.283 6.283-.06 1.27-.072 1.664-.072 5.04s.013 3.77.072 5.04c.204 4.468 1.83 6.079 6.283 6.283 1.27.06 1.664.072 5.04.072s3.77-.013 5.04-.072c4.468-.204 6.079-1.83 6.283-6.283.06-1.27.072-1.664-.072-5.04s-.013-3.77-.072-5.04c-.204-4.468-1.83-6.079-6.283-6.283-1.27-.06-1.664-.072-5.04-.072zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a4 4 0 110-8 4 4 0 010 8zm6.5-11.838a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 text-center">
+                <p class="text-gray-500">&copy; 2025 Christ Embassy Barking. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const menuButton = document.getElementById('mobile-menu-button');
+            const menuPanel = document.getElementById('mobile-menu-panel');
+            const menuClose = document.getElementById('mobile-menu-close');
+            const menuOverlay = document.getElementById('mobile-menu-overlay');
+
+            const openMenu = () => {
+                menuPanel.classList.remove('-translate-x-full');
+                menuOverlay.classList.remove('hidden');
+            };
+
+            const closeMenu = () => {
+                menuPanel.classList.add('-translate-x-full');
+                menuOverlay.classList.add('hidden');
+            };
+
+            if (menuButton) menuButton.addEventListener('click', openMenu);
+            if (menuClose) menuClose.addEventListener('click', closeMenu);
+            if (menuOverlay) menuOverlay.addEventListener('click', closeMenu);
+
+            // Scroll animations (kept from index.html, though not strictly needed for live.html right now)
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+
+</html>
