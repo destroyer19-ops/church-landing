@@ -60,7 +60,8 @@ try {
         [
             'expires' => time() + (365 * 24 * 60 * 60),
             'path' => '/',
-            'httponly' => true,
+            'secure' => (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off'),
+            'httponly' => false,
             'samesite' => 'Lax',
         ]
     );

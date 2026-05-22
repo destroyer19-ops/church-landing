@@ -1,17 +1,39 @@
-<?php
-// This script acts as a gateway for the "Watch Service" link.
-// It checks if the user is a returning visitor by looking for a cookie.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting | Christ Embassy Barking</title>
+    <meta http-equiv="refresh" content="5;url=stream-register.html">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body style="background-color: var(--light-gray);">
+    <main style="min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+        <div style="max-width: 36rem; text-align: center; background: white; padding: 2.5rem; border-radius: 1.5rem;" class="sleek-shadow">
+            <p style="letter-spacing: 0.18em; text-transform: uppercase; font-size: 0.78rem; font-weight: 700; color: var(--accent-orange); margin-bottom: 1rem;">
+                Watch Service
+            </p>
+            <h1 style="font-size: 2rem; line-height: 1.1; color: var(--primary-blue); margin-bottom: 1rem;">
+                Redirecting you now
+            </h1>
+            <p style="color: #5f6f82; margin-bottom: 1.5rem;">
+                We are checking whether you are a returning viewer so we can send you to the right page.
+            </p>
+            <p style="color: #5f6f82;">
+                If nothing happens, <a href="stream-register.html" style="color: var(--accent-orange); font-weight: 600;">continue to registration</a>.
+            </p>
+        </div>
+    </main>
 
-$cookie_name = 'viewer_id';
+    <script>
+        (function () {
+            const hasViewerCookie = document.cookie
+                .split(';')
+                .map(part => part.trim())
+                .some(part => part.startsWith('viewer_id='));
 
-if (isset($_COOKIE[$cookie_name])) {
-    // The user has a viewer_id cookie, so they are a returning visitor.
-    // Redirect them to the "welcome back" page.
-    header("Location: returning-viewer.html");
-} else {
-    // The user does not have the cookie, so they are a new visitor.
-    // Redirect them to the full registration page.
-    header("Location: stream-register.html");
-}
-exit();
-?>
+            window.location.replace(hasViewerCookie ? 'returning-viewer.html' : 'stream-register.html');
+        })();
+    </script>
+</body>
+</html>
