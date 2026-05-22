@@ -23,7 +23,13 @@ body {
 }
 
 .site-logo {
-    height: 3rem;
+    height: 2.2rem;
+    width: auto;
+    object-fit: contain;
+}
+
+.site-logo-footer {
+    height: 2.8rem;
     width: auto;
     object-fit: contain;
 }
